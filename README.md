@@ -7,6 +7,7 @@ A collection of [Agent Skills](https://agentskills.io) for PHP application devel
 | Skill | Path | Description |
 |---|---|---|
 | [Layered Architecture](symfony/layered-architecture/SKILL.md) | `symfony/layered-architecture/` | Clean Architecture with CQRS and DDD for Symfony applications. Covers Application, Domain, and Infrastructure layer structure, module organization, and code patterns. |
+| [Onion Architecture](symfony/onion-architecture/SKILL.md) | `symfony/onion-architecture/` | Onion Architecture with CQRS and DDD for Symfony. Domain at the center (entities, VOs, interfaces), Application for use-case orchestration (handlers, services), Infrastructure as outermost layer (HTTP, persistence, external integrations). |
 
 ## Usage
 

@@ -19,21 +19,15 @@ Reference these guidelines when:
 
 ## Layers Overview
 
-| Layer | Purpose | Depends On |
-|---|---|---|
-| Application | Connects user with domain. HTTP, console, config, security. | Domain |
-| Domain | All business logic. Organized into bounded contexts. | Nothing (pure PHP) |
-| Infrastructure | Generic clients and integrations. Extractable as libraries. | Nothing |
+| Layer | Purpose | Depends On             |
+|---|---|------------------------|
+| Application | Connects user with domain. HTTP, console, config, security. | Domain, Infrastructure |
+| Domain | All business logic. Organized into bounded contexts. | Infrastructure         |
+| Infrastructure | Generic clients and integrations. Extractable as libraries. | Nothing                |
 
 **Dependency rule:** Application depends on Domain and Infrastructure. Domain depends on Infrastructure interfaces (MessageBus, Storage, etc.). Infrastructure depends on nothing.
 
 **Infrastructure abstraction rule:** Infrastructure must never know about domain-specific logic. It provides generic capabilities (e.g., send a message and receive decoded JSON). Domain-specific concerns (prompts, DTO transformation, business validation) belong to the domain context that uses the infrastructure client.
-
-## Code Conventions
-
-- Classes without mutable state must be `final readonly` by default
-- Enum cases use `camelCase` (e.g., `pending`, `confirmed`, not `PENDING`)
-- Entities and Command/Query classes are NOT `readonly` (they have mutable state)
 
 ## Application Layer
 
@@ -93,7 +87,7 @@ Security/
 
 ## Domain Layer
 
-Organized into bounded contexts. Contexts can be nested (e.g., `Training/Chat/`, `Training/WordTrainer/`).
+Organized into bounded contexts. Contexts can be nested (e.g., `Order/Delivery/`, `Order/Discount/`).
 
 | Module | Description |
 |---|---|
