@@ -8,6 +8,8 @@ A collection of [Agent Skills](https://agentskills.io) for PHP application devel
 |---|---|---|
 | [Layered Architecture](symfony/layered-architecture/SKILL.md) | `symfony/layered-architecture/` | Clean Architecture with CQRS and DDD for Symfony applications. Covers Application, Domain, and Infrastructure layer structure, module organization, and code patterns. |
 | [Onion Architecture](symfony/onion-architecture/SKILL.md) | `symfony/onion-architecture/` | Onion Architecture with CQRS and DDD for Symfony. Domain at the center (entities, VOs, interfaces), Application for use-case orchestration (handlers, services), Infrastructure as outermost layer (HTTP, persistence, external integrations). |
+| [Package by Layer](symfony/package-by-layer/SKILL.md) | `symfony/package-by-layer/` | Package-by-layer directory organization. Top-level dirs are layers (`src/Domain/`, `src/Application/`, `src/Infrastructure/`), bounded contexts nested inside. Architecture-agnostic. |
+| [Package by Feature](symfony/package-by-feature/SKILL.md) | `symfony/package-by-feature/` | Package-by-feature directory organization. Top-level dirs are bounded contexts (`src/Order/`, `src/Payment/`), layers nested inside each feature. Architecture-agnostic. |
 
 ## Usage
 
